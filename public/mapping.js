@@ -1,4 +1,4 @@
-$('#check00').text('just checking');
+
 let map;
 
 let initMap=()=>{

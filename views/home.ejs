@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Women Safety App</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+      type="text/css"
+    />
+    <style>
+        body { margin:0; padding:0; }
+    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- <script src="mapbox1.js"></script> -->
+</head>
+<body>
+    <div id="heading">Women Safety App</div>
+    <div id="description">This is a Woman safety app that that recognises a <b>WOMAN'S CRY FOR HELP</b> and quickly aids them by contacting necessary officials.
+         Additionally it also includes location wise tracking. All these are possible with the help of a ML model running on the backend
+    </div>
+    <div id='results'></div>
+    <div id='buttonwrap'><button id='clicker'>Distress Call</button></div>
+    <div id="map" style="width:600px;height:400px"></div>
+    
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+    <script src="mapbox1.js"></script>
+    <script src="app1.js"></script>
+</body>
+</html>
