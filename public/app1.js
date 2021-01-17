@@ -33,7 +33,8 @@ function starter() {
 socketio.on('results', function (data) {
     console.log(data);
     if(data){
-        $('#results').append(data);
+        if(data=='success')
+        $('#results').text("You have been heard, Help is on the way stay strong");
     }
 });
 

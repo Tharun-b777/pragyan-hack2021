@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bangers&family=Roboto:wght@700&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	color: black;
+
+}
+body{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: #fdfdfd;
+	background: #f3f3f3;
+}
+#heading{
+	padding: 10px;
+    font-size: 40px;
+    font-weight: bold;
+	background: #404040;
+/*	background:  #5900b3;*/
+	color: white;
+	text-align: center;
+}
+#description{
+    width: 60vw;
+    margin: auto;
+    padding: 10px;
+    font-size: 22px;
+    margin-top: 20px ;
+}
+#buttonwrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+#clicker{
+    font-size: 20px;
+    width: 200px;
+    margin: auto;
+    background:#00008B;
+    color: white;
+    text-align:center;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+#map{
+    margin: auto;
+}
+#link{
+    text-align: center;
+    width: 80vw;
+    margin: auto;
+    font-size: 24px;
+    padding-bottom: 20x;
+}
+#dest{
+    padding: 20px;
+    width: 60vw;
+    margin: auto;
+    font-size: 23px;
+}
+#results{
+    width: 60vw;
+    margin: auto;
+    padding: 10px;
+    font-size: 22px;
+    margin-top: 20px ;   
+}

@@ -1,4 +1,4 @@
-$('#check00').text('just tracking');
+
 
 let plat=parseFloat($('#personLat').text());
 let plong=parseFloat($('#personLong').text());
