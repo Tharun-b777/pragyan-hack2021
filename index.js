@@ -21,6 +21,22 @@ mongoose.connect(process.env.db_url, {
 
 const Person= require('./db-models/person');
 
+var nodemailer = require('nodemailer');
+const { getMaxListeners } = require('./db-models/person');
+
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.email_id,
+      pass: process.env.email_password
+    }
+  });
+
+//Setting up twillio to send messages(paid service)
+// var accountSid = process.env.sms_id; 
+// var authToken = process.env.sms_token;   
+// const client = require('twilio')(accountSid, authToken);
+
 app.get('/',(req,res)=>{
     res.render('hello')
 })
@@ -30,6 +46,44 @@ app.post('/create',async (req,res)=>{
         const p=await Person.create({
             latitude:req.body.latitude,
             longitude:req.body.longitude
+        })
+
+        //the following code below can be used to send a text message after purchasing in twilio.com
+
+        // await client.messages
+        //     .create({
+        //         body: 'ALERT there has been a woman safety issue!!Visit http://localhost:3000/tracker/'+p._id+' to get the location',
+        //         from: {mobile number from api},
+        //         to: {to mobile number}
+        //     })
+        //     .then(message => console.log(message.sid));
+        fs.readFile('./contacts/contact.json','utf-8',(err,content)=>{
+            if(err){
+                console.log(err);
+            }else{
+                try {
+                    const data=JSON.parse(content);
+                    for await(const contact of data.contacts){
+                        if(contact.extension!="example.com"){
+                            var mailOptions = {
+                                from: process.env.email_id,
+                                to: contact.email,
+                                subject: 'ALERTTT theres a woman in trouble',
+                                text: 'We have noticed through our web application that a women is in trouble and is calling for help. Visit http://localhost:3000/tracker/'+p._id+' to get the location '
+                            };
+                            transporter.sendMail(mailOptions, function(error, info){
+                                if (error) {
+                                  console.log(error);
+                                } else {
+                                  console.log('Email sent: ' + info.response);
+                                }
+                              });                            
+                        }
+                    }
+                } catch (error) {
+                    console.log(error)
+                }
+            }
         })
         return res.status(200).json({message:"created",id:p._id});
     }catch(err){
