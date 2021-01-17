@@ -22,11 +22,11 @@ def index():
             predict = model.predict(mfccs.reshape(1, -1))
             
         if predict:
-            message='Emergecy'
+            message='Emergency'
 
         return message
 
-        except:
+    except:
             return 'error'
             
 
