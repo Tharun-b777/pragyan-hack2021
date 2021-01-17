@@ -20,14 +20,18 @@ def index():
                 y=X, sr=sample_rate, n_mfcc=40).T, axis=0))
 
             predict = model.predict(mfccs.reshape(1, -1))
-            
+
         if predict:
             message='Emergency'
 
         return message
 
     except:
+<<<<<<< HEAD
             return 'error'
+=======
+        return 'error'
+>>>>>>> 2452a058b79fda4287503418f18cff1ea3d1a7e4
             
 
 if __name__ == '__main__':
