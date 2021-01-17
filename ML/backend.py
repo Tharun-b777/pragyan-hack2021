@@ -42,7 +42,7 @@ def index():
                     y=X, sr=sample_rate, n_mfcc=40).T, axis=0))
 
                 predict = model.predict(mfccs.reshape(1, -1))
-
+                
                 if predict:
                     message='Emergecy'
 
