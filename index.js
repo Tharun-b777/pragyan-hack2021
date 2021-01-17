@@ -1,3 +1,4 @@
+require('dotenv').config({ path: './env/.env' });
 const express= require('express');
 const path = require('path');
 const fs = require('fs');
@@ -14,7 +15,7 @@ app.use(express.json());
 app.set('view engine', 'ejs')
 app.use(cors());
 
-mongoose.connect('mongodb://localhost/pragy', {
+mongoose.connect(process.env.db_url, {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
 
