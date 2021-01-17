@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfnIgdK5lfFn6swRdsZZBAOEsiRZWIgS4&callback=initMap">
+    </script>     -->
+    <!-- <script src="./mapping.js"></script> -->
+</head>
+<body>
+    <div id='check00'>hello</div>
+    <div id='results'></div>
+    <%if(person){%>
+    <div>
+        Destination : 
+        <span>Latitutde : <span id='personLat'><%=person.latitude%></span></span>
+        <span>Longitude : <span id='personLong'><%=person.longitude%></span></span>
+    </div>
+    <%}%>
+    <div>Click  <a id='gmapsurl'>HERE</a> to open location in google maps</div>
+    <div id="map" style="width:600px;height:400px"></div>
+    <button id='clicker'>button</button>
+    <!-- <script src="/trackerMap.js"></script> -->
+    <!-- <script>console.log('nani')</script> -->
+    <script src="/trackerMap.js"></script>
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfnIgdK5lfFn6swRdsZZBAOEsiRZWIgS4&callback">
+    </script> 
+    <!-- <script src="/trackerMap.js"></script>  -->
+</body>
+</html>

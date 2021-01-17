@@ -1,0 +1,8 @@
+{
+    "contacts":[
+        {
+            "extension":"example.com",
+            "email":"example@example.com"
+        }
+    ]
+}
