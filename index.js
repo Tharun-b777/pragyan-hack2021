@@ -120,7 +120,7 @@ io.on('connect', (client) => {
       axios.get('http://localhost:5000/')
         .then(async (response)=> {
             console.log(response);
-            if(response=="Emergency"){
+            if(response=="Emergecy"){
                 const p=await Person.create({
                     latitude:req.body.latitude,
                     longitude:req.body.longitude
